@@ -78,11 +78,11 @@ const adminOrderSlice = createSlice({
     builder
       //fetch
       .addCase(fetchAllOrder.pending, (state) => {
-        state.pending = true;
+        state.loading = true;
         state.error = null;
       })
       .addCase(fetchAllOrder.fulfilled, (state, action) => {
-        state.pending = false;
+        state.loading = false;
         state.orders = action.payload;
         state.totalOrders = action.payload.length;
         //Calculate total sales
@@ -93,12 +93,12 @@ const adminOrderSlice = createSlice({
         state.totalSales = parseFloat(totalSales);
       })
       .addCase(fetchAllOrder.rejected, (state, action) => {
-        state.pending = true;
+        state.loading = false;
         state.error = action.payload.message;
       })
       // Update order status
       .addCase(updateOrderStatus.pending, (state) => {
-        state.pending = true;
+        state.loading = true;
         state.error = null;
       })
       .addCase(updateOrderStatus.fulfilled, (state, action) => {
@@ -112,21 +112,21 @@ const adminOrderSlice = createSlice({
         }
       })
       .addCase(updateOrderStatus.rejected, (state, action) => {
-        state.pending = true;
+        state.loading = false;
         state.error = action.payload.message;
       })
       .addCase(deleteOrder.pending, (state) => {
-        state.pending = true;
+        state.loading = true;
         state.error = null;
       })
       .addCase(deleteOrder.fulfilled, (state, action) => {
-        state.pending = false;
+        state.loading = false;
         state.orders = state.orders.filter(
           (order) => order._id !== action.payload
         );
       })
       .addCase(deleteOrder.rejected, (state, action) => {
-        state.pending = true;
+        state.loading = false;
         state.error = action.payload.message;
       });
   },

@@ -82,11 +82,11 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.user = action.payload;
       })
       .addCase(loginUser.rejected, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.error = action.payload.message;
       })
 
@@ -95,11 +95,11 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(registerUser.fulfilled, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.user = action.payload;
       })
       .addCase(registerUser.rejected, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.error = action.payload.message;
       });
   },

@@ -50,7 +50,7 @@ const FilterSideBar = () => {
     "Jbagy",
   ];
 
-  const genders = ["Men", "Women"];
+  const genders = ["Men", "Women", "Unisex"];
   const handleFilterChange = (e) => {
     const { name, value, checked, type } = e.target;
 

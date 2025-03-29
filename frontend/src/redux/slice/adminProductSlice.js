@@ -73,33 +73,33 @@ const adminProductSlice = createSlice({
     builder
       //fetch
       .addCase(fetchAdminProducts.pending, (state) => {
-        state.pending = true;
+        state.loading = true;
         state.error = null;
       })
       .addCase(fetchAdminProducts.fulfilled, (state, action) => {
-        state.pending = false;
+        state.loading = false;
         state.products = action.payload;
       })
       .addCase(fetchAdminProducts.rejected, (state, action) => {
-        state.pending = true;
+        state.loading = false;
         state.error = action.error.message;
       })
       //Create
       .addCase(createProduct.pending, (state) => {
-        state.pending = true;
+        state.loading = true;
         state.error = null;
       })
       .addCase(createProduct.fulfilled, (state, action) => {
-        state.pending = false;
+        state.loading = false;
         state.products.push(action.payload);
       })
       .addCase(createProduct.rejected, (state, action) => {
-        state.pending = true;
+        state.loading = false;
         state.error = action.error.message;
       })
       //Update
       .addCase(updateProduct.pending, (state) => {
-        state.pending = true;
+        state.loading = true;
         state.error = null;
       })
       .addCase(updateProduct.fulfilled, (state, action) => {
@@ -114,13 +114,13 @@ const adminProductSlice = createSlice({
       })
 
       .addCase(deleteProduct.fulfilled, (state, action) => {
-        state.pending = false;
+        state.loading = false;
         state.products = state.products.filter(
           (product) => product._id !== action.payload
         );
       })
       .addCase(deleteProduct.rejected, (state, action) => {
-        state.pending = true;
+        state.loading = false;
         state.error = action.error.message;
       });
   },

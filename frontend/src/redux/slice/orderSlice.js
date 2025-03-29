@@ -54,27 +54,27 @@ const orderSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchUserOrder.pending, (state) => {
-        state.pending = true;
+        state.loading = true;
         state.error = null;
       })
       .addCase(fetchUserOrder.fulfilled, (state, action) => {
-        state.pending = false;
+        state.loading = false;
         state.orders = action.payload;
       })
       .addCase(fetchUserOrder.rejected, (state, action) => {
-        state.pending = true;
+        state.loading = false;
         state.error = action.payload.message;
       })
       .addCase(fetchOrderDetails.pending, (state) => {
-        state.pending = true;
+        state.loading = true;
         state.error = null;
       })
       .addCase(fetchOrderDetails.fulfilled, (state, action) => {
-        state.pending = false;
+        state.loading = false;
         state.orderDetails = action.payload;
       })
       .addCase(fetchOrderDetails.rejected, (state, action) => {
-        state.pending = true;
+        state.loading = false;
         state.error = action.payload.message;
       });
   },

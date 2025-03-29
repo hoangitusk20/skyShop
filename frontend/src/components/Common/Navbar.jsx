@@ -34,7 +34,7 @@ const Navbar = () => {
         {/**Left - Logo */}
         <div>
           <Link to="/" className="text-2xl font-medium">
-            Rabbit
+            SKY
           </Link>
         </div>
         {/**Center - Navigation Links */}
@@ -85,7 +85,7 @@ const Navbar = () => {
           >
             <HiOutlineShoppingBag className="h-6 text-gray-700 w-6" />
             {cartItemCount > 0 && (
-              <span className="absolute bg-rabbit-red text-xs rounded-full px-2 py-0.5 text-white -top-1">
+              <span className="absolute bg-sky-600 text-xs rounded-full px-2 py-0.5 text-white -top-1">
                 {cartItemCount}
               </span>
             )}

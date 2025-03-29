@@ -35,15 +35,15 @@ const checkoutSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(createCheckout.pending, (state) => {
-        state.pending = true;
+        state.loading = true;
         state.error = null;
       })
       .addCase(createCheckout.fulfilled, (state, action) => {
-        state.pending = false;
+        state.loading = false;
         state.checkout = action.payload;
       })
       .addCase(createCheckout.rejected, (state, action) => {
-        state.pending = true;
+        state.loading = false;
         state.error = action.payload.message;
       });
   },

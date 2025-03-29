@@ -12,13 +12,12 @@ const FeatureCollection = () => {
             Comfort and Style
           </h2>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Apparel made for your everyday life
+            Apparel designed for your everyday life.
           </h2>
 
           <p className="text-lg text-gray-600 mb-6">
-            Discover high-quality, comfortable clothing and effortlessly blends
-            fashion and function. Designed to make you look and feel great
-            everyday
+            Discover high-quality, comfortable clothing that effortlessly blends
+            fashion and function—made to make you look and feel great every day.
           </p>
 
           <Link

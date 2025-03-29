@@ -176,12 +176,12 @@ const cartSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchCart.fulfilled, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.cart = action.payload;
         saveCartToStorage(action.payload);
       })
       .addCase(fetchCart.rejected, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.error = action.error.message || "Failed to fetch cart";
       })
       //Handle add to cart
@@ -190,12 +190,12 @@ const cartSlice = createSlice({
         state.error = null;
       })
       .addCase(addToCart.fulfilled, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.cart = action.payload;
         saveCartToStorage(action.payload);
       })
       .addCase(addToCart.rejected, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.error = action.payload?.message || "Failed to add to cart";
       })
       //Handle update quantity
@@ -204,12 +204,12 @@ const cartSlice = createSlice({
         state.error = null;
       })
       .addCase(updateCartItemQuantity.fulfilled, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.cart = action.payload;
         saveCartToStorage(action.payload);
       })
       .addCase(updateCartItemQuantity.rejected, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.error =
           action.payload?.message || "Failed to update item quantity";
       })
@@ -219,26 +219,26 @@ const cartSlice = createSlice({
         state.error = null;
       })
       .addCase(removeFromCart.fulfilled, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.cart = action.payload;
         saveCartToStorage(action.payload);
       })
       .addCase(removeFromCart.rejected, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.error = action.payload?.message || "Failed to remove item";
       })
       //Handle merge Cart
       .addCase(mergeCart.pending, (state) => {
-        state.loading = true;
+        state.loading = false;
         state.error = null;
       })
       .addCase(mergeCart.fulfilled, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.cart = action.payload;
         saveCartToStorage(action.payload);
       })
       .addCase(mergeCart.rejected, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.error = action.payload?.message || "Failed to merge cart";
       });
   },
