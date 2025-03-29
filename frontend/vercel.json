@@ -5,5 +5,7 @@
   "installCommand": "npm install",
   "outputDirectory": "dist",
   "framework": "vite",
-  "routes": [{ "src": "/(.*)", "dest": "/index.html" }]
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
