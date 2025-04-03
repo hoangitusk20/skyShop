@@ -4,6 +4,7 @@ import {
   HiOutlineUser,
   HiOutlineShoppingBag,
   HiBars3BottomRight,
+  HiOutlineChatBubbleLeft,
 } from "react-icons/hi2";
 import SearchBar from "./SearchBar";
 import CartDrawer from "../Layout/CartDrawer";
@@ -77,6 +78,9 @@ const Navbar = () => {
           )}
           <Link to="/profile" className="hover:text-black">
             <HiOutlineUser className="h-6 w-6 text-gray-700" />
+          </Link>
+          <Link to="/chat" className="hover:text-black">
+            <HiOutlineChatBubbleLeft className="h-6 w-6 text-gray-700" />
           </Link>
 
           <button

@@ -17,7 +17,7 @@ import UserManagement from "./components/Admin/UserManagement";
 import ProductManagement from "./components/Admin/ProductManagement";
 import EditProductPage from "./components/Admin/EditProductPage";
 import OrderManagement from "./components/Admin/OrderManagement";
-
+import ChatPage from "./pages/ChatPage";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import ProtectedRoute from "./components/Common/ProtectedRoute";
@@ -46,6 +46,9 @@ function App() {
             ></Route>
             <Route path="order/:id" element={<OrderDetailsPage />}></Route>
             <Route path="my-orders" element={<MyOrderPage />}></Route>
+            <Route>
+              <Route path="chat" element={<ChatPage />}></Route>
+            </Route>
           </Route>
           <Route
             path="/admin"
